@@ -15,7 +15,7 @@ class TestLab1Code(unittest.TestCase):
 	# binarify
 	def test_binarify_16(self):
 		self.assertEqual(lab1.binarify(16), "10000")
-
+		
 	def test_binarify_127(self):
 		self.assertEqual(lab1.binarify(127), "1111111")
 
@@ -24,7 +24,7 @@ class TestLab1Code(unittest.TestCase):
 
 	def test_binarify_negative(self):
 		self.assertEqual(lab1.binarify(-16), "0")
-
+"""
 
 	# int_to_base
 	def test_int_to_base_2(self):
@@ -92,8 +92,7 @@ class TestLab1Code(unittest.TestCase):
 
 	def test_romanify_3999(self):
 		self.assertEqual(lab1.romanify(3999), "MMMCMXCIX")
-
+"""
 
 if __name__ == '__main__':
-  unittest.main()	
-
+  unittest.main()
