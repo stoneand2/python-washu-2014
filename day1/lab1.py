@@ -28,6 +28,11 @@ def int_to_base(num, base):
   if num<=0:  return '0' 
   digits = []
   return ''.join(digits)
+  
+  
+  
+  
+  
 
 def base_to_int(string, base):
   """take a string-formatted number and its base and return the base-10 integer"""
