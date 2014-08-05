@@ -1,6 +1,5 @@
 #file = open('words.txt')
 
-<<<<<<< HEAD
 #for line in file:
 #  		word = line.strip()
 #  		print word
@@ -17,7 +16,6 @@ def has_no_e(word):
 		
 has_no_e('') 
 		
-=======
 # for line in file:
 #	word = line.strip()
 #	for letter in word:
@@ -68,26 +66,3 @@ def is_abecedarian(letter_combo):
 
 
 is_abecedarian('xxyz')
-
-
-
-
-
-
-
-
-
-
-
-
-#def uses_only(word, available):
-#	for letter in word:
-#		if not letter in available:
-#			return False
-#	return True
-	
-	
-##	
-	
-
->>>>>>> temp
