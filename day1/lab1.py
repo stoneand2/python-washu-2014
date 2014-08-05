@@ -29,8 +29,7 @@ def int_to_base(num, base):
   digits = []
   return ''.join(digits)
   
-  
-  
+
   
   
 
@@ -39,6 +38,15 @@ def base_to_int(string, base):
   if string=="0" or base <= 0 : return 0 
   result = 0 
   return result 
+
+
+
+
+
+
+
+
+
 
 def flexibase_add(str1, str2, base1, base2):
   """add two numbers of different bases and return the sum"""
