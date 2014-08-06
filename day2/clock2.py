@@ -1,13 +1,13 @@
 class Clock():
 
 	def __init__(self, hours, minutes=00):
-		self.hours = hours
+		self.hours = hours # this is an instance variable, able to be accessed anywhere you call self
 		self.minutes = minutes
 		
 	
-	@classmethod
+	@classmethod #instead of self, the first thing we access is the class itself
 	def at(cls, hours, minutes=00):
-		return cls(hours, minutes)		
+		return cls(hours, minutes) # basically, same as return Clock(...)		
 		
 	def __add__(self, number):
 	

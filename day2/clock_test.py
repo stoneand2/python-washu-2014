@@ -1,5 +1,9 @@
 import unittest
+<<<<<<< HEAD
 from clock2 import *
+=======
+from clock import Clock
+>>>>>>> upstream/master
 
 class ClockTest(unittest.TestCase):
 
@@ -17,7 +21,7 @@ class ClockTest(unittest.TestCase):
   def test_add_over_an_hour(self):
     clock = Clock.at(10) + 61
     self.assertEqual("11:01", clock.__str__())
-"""
+
   def test_wrap_around_at_midnight(self):
     clock = Clock.at(23, 30) + 60
     self.assertEqual("00:30", clock.__str__())
@@ -41,7 +45,7 @@ class ClockTest(unittest.TestCase):
   def test_wrap_around_backwards(self):
     clock = Clock.at(0, 30) - 60
     self.assertEqual("23:30", clock.__str__())
-"""
+
 if __name__ == '__main__':
   unittest.main() 
 
