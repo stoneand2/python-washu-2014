@@ -13,7 +13,7 @@ class SchoolTest(unittest.TestCase): # inherits from unittest.TestCase
     def test_add_student(self):
         self.school.add("Aimee", 2)
         self.assertEqual({2: {"Aimee"}}, self.school.db)
-"""
+
     def test_add_more_students_in_same_class(self):
         self.school.add("James", 2)
         self.school.add("Blair", 2)
@@ -33,7 +33,7 @@ class SchoolTest(unittest.TestCase): # inherits from unittest.TestCase
 
     def test_get_students_in_a_non_existant_grade(self):
         self.assertEqual(None, self.school.grade(1))
-
+"""
     def test_sort_school(self):
         self.school.add("Jennifer", 4)
         self.school.add("Kareem", 6)

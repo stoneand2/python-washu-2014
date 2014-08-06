@@ -11,7 +11,7 @@ class School(object):
 		self.name = name
 		self.year = year
 
-		self.db.setdefault(self.year, set([]))
+		self.db.setdefault(self.year, set([self.name]))
 		print self.db
 
 school = School("Happy")
