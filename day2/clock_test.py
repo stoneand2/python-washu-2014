@@ -1,9 +1,7 @@
 import unittest
-<<<<<<< HEAD
 from clock2 import *
-=======
 from clock import Clock
->>>>>>> upstream/master
+
 
 class ClockTest(unittest.TestCase):
 
