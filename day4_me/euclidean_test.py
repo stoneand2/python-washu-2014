@@ -17,6 +17,9 @@ class EuclideanTests(unittest.TestCase):
 	
 	def test_float(self):
 		self.assertEqual("GCD is 3", euclidean_alg.euclidean(84, 3.0))
+	
+	def test_equal(self):
+		self.assertEqual("GCD is 8", euclidean_alg.euclidean(8, 8))
 
 if __name__ == '__main__': # run the test for us
 	unittest.main()	
