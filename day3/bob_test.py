@@ -21,6 +21,7 @@ class BobTest(unittest.TestCase):
 	def test_anything_else(self):
 		self.assertEqual("Whatever.", bob_lab.response("This is something else."))
 		self.assertEqual("Whatever.", bob_lab.response("This is something else!"))
+		self.assertEqual("Whatever.", bob_lab.response("112"))
 		
 if __name__ == '__main__': # run the test for us
 	unittest.main()	
