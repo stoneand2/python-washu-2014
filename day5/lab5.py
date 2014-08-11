@@ -22,6 +22,40 @@ def makeLink(G, node1, node2):
 # for i in range(n):
 #   ring = makeLink(ring, i, (i+1))
 
+# def recursive_test(passed1, passed2): 
+# 	
+# 	ring = {}
+# 	
+# 	bottom = passed1
+# 	top = passed2
+# 	
+# 	vertical1 = passed1
+# 	vertical2 = passed2
+# 	
+# 	
+# 	while top <= 256:
+# 		for i in range(bottom, top):
+# 			ring = makeLink(ring, i, (i+1))
+# 	
+# 		bottom += 16
+# 		top += 16
+# 		recursive_test(bottom, top)
+# 		
+# 	while vertical1 <= 224:
+# 		for i in range(vertical1, vertical2+1):
+# 			ring = makeLink(ring, i, (i+16))
+# 		
+# 		vertical1 += 16
+# 		vertical2 += 16
+# 		recursive_test(vertical1, vertical2)
+# 		
+# 	
+# 	return ring	
+# 		
+# testofgraph = recursive_test(0,15) 
+
+# print range(0,3)
+
 def recursive_test(passed1, passed2): 
 	
 	ring = {}
@@ -43,23 +77,23 @@ def recursive_test(passed1, passed2):
 		
 	while vertical1 <= 8:
 		for i in range(vertical1, vertical2+1):
-			ring = makeLink(ring, i, (i+4))
+			ring = makeLink(ring, i, (i+1))
 		
 		vertical1 += 4
 		vertical2 += 4
 		recursive_test(vertical1, vertical2)
 		
 	
-	print ring	
+	return ring	
 		
-recursive_test(0,3) 
-
-# print range(0,3)
-
-
+testofgraph = recursive_test(0,3) 
 
 	
-	
+print testofgraph
+print testofgraph.keys()
+
+for node in testofgraph.keys():
+	print testofgraph[node]		
 
 
 
@@ -67,9 +101,13 @@ recursive_test(0,3)
 # print len(ring)
 
 
-# How many edges?
-# print sum([len(ring[node]) for node in ring.keys()])/2   # takes len of innermost dict, sums, divides by 2. will work if can add to innermost the new connections  
+def countEdges(ring):
 
+	return sum([len(ring[node]) for node in ring.keys()])   
+
+
+edges_count = countEdges(testofgraph)
+#print edges_count
 
 # Grid Network
 # TODO: create a square graph with 256 nodes and count the edges 

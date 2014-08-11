@@ -19,7 +19,7 @@ class Stock():
 		self.ticker_symbol = ticker_symbol
 	
 	def info_print(self):
-		print "The stock % s has a price of %d." % (self.ticker_symbol, self.price)
+		return "The stock %s has a price of %d." % (self.ticker_symbol, self.price)
 
 portfolio = Portfolio()
 print portfolio.addCash(300.50)
