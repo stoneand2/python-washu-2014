@@ -100,8 +100,7 @@ class Bond(Investments): # introducing bonds isn't hard w/ inheritance, just tre
 	def __init__(self, name, price = 1, type = "bonds"):
 		Investments.__init__(self, price, name, type)
 		self.addToDict()
-		
-		
+
 portfolio = Portfolio()
 # portfolio.addCash(300.50)
 # s = Stock(20, "HFH")

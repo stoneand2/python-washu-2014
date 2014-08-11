@@ -1,6 +1,7 @@
 import unittest
 import hw2_4
 
+
 class PortfolioTest(unittest.TestCase):
 	
 	def setup(self): # this will run before each test
