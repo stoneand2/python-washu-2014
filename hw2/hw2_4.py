@@ -5,7 +5,7 @@ class Portfolio(object):
 	def __init__(self, cash_value = 0.0):
 		self.cash_value = cash_value
 		self.my_investments = {} # a dict to hold all current investments the user has
-		self.history_log = "User's portfolio iniitialized.\n"
+		self.history_log = "User's portfolio initialized.\n"
 	
 	def addCash(self, value_to_add):
 		self.cash_value += value_to_add
@@ -40,7 +40,7 @@ class Portfolio(object):
 		self.cash_value = float("%.2f" % self.cash_value)
 		self.history_log += ("\nSold %d shares of %s, now have $%r in portfolio." % (number, what_investment, self.cash_value))
 	
-	def buyStock(self, number, what_stock, type = "stocks"): # moves up to the more abstract makeInvestment with its stock-specific type information
+	def buyStock(self, number, what_stock, type = "stocks"): # calls to the more abstract makeInvestment with its stock-specific type information
 		self.makeInvestment(number, what_stock, type)
 	
 	def buyMutualFund(self, number, what_mf, type = "mutual funds"):
@@ -49,7 +49,7 @@ class Portfolio(object):
 	def buyBond(self, number, what_bond, type = "bonds"):
 		self.makeInvestment(number, what_bond, type)
 	
-	def sellStock(self, what_investment, number):
+	def sellStock(self, what_investment, number):  # just like buying, selling calls to the more abstract sellInvestment
 		self.sellInvestment(what_investment, number, bottom = 0.5, top = 1.5, x = dict_of_investments['stocks'][what_investment], type="stocks") # replaces defined values in sellInvestment with those appropriate for selling stocks
 	
 	def sellMutualFund(self, what_investment, number):
@@ -59,7 +59,7 @@ class Portfolio(object):
 		self.sellInvestment(what_investment, number, type = "bonds")
 		
 	def history(self):
-		print self.history_log
+		return self.history_log
 	
 	def __str__(self):  # the print(portfolio) method
 		what_to_print = "cash: $%r \n" % (self.cash_value)
@@ -86,7 +86,7 @@ class Investments(object): # a parent class for stocks, mutual funds, bonds
 			return dict_of_investments
 		(dict_of_investments[self.type])[self.name] = self.price # investment type already in the dict, so it just adds the investment name and price
 	
-class Stock(Investments):
+class Stock(Investments):  # each type of investment inherits from the parent Investments class
 	def __init__(self, price, name, type = "stocks"):
 		Investments.__init__(self, price, name, type)
 		self.addToDict() 
@@ -96,7 +96,7 @@ class MutualFund(Investments):
 		Investments.__init__(self, price, name, type)
 		self.addToDict()
 		
-class Bond(Investments): # introducing bonds isn't hard w/ inheritance, just treat it like stocks and mutual funds. This treats bonds w/ the same rules as mutual funds, but could be altered like for stocks
+class Bond(Investments): # introducing bonds isn't hard w/ inheritance, just like stocks and mutual funds. This treats bonds w/ the same rules as mutual funds, but could be altered like for stocks
 	def __init__(self, name, price = 1, type = "bonds"):
 		Investments.__init__(self, price, name, type)
 		self.addToDict()
@@ -108,4 +108,10 @@ portfolio = Portfolio()
 # mf1 = MutualFund("BRT")
 # mf2 = MutualFund("GHT")
 # portfolio.buyMutualFund(10.3, mf1)
+# portfolio.buyMutualFund(2, mf2)
+# print(portfolio)
+# portfolio.sellMutualFund("BRT", 3)
+# portfolio.sellStock("HFH", 1)
+# portfolio.withdrawCash(50)
+# print portfolio.history()
 
