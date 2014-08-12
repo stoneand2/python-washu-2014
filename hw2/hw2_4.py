@@ -41,7 +41,7 @@ class Portfolio(object):
 		self.history_log += ("\nSold %d shares of %s, now have $%r in portfolio." % (number, what_investment, self.cash_value))
 	
 	def buyStock(self, number, what_stock, type = "stocks"): # calls to the more abstract makeInvestment with its stock-specific type information
-		self.makeInvestment(number, what_stock, type)
+		self.makeInvestment(int(number), what_stock, type) #  int() forces whole-unit purchases of stocks
 	
 	def buyMutualFund(self, number, what_mf, type = "mutual funds"):
 		self.makeInvestment(number, what_mf, type)
@@ -50,7 +50,7 @@ class Portfolio(object):
 		self.makeInvestment(number, what_bond, type)
 	
 	def sellStock(self, what_investment, number):  # just like buying, selling calls to the more abstract sellInvestment
-		self.sellInvestment(what_investment, number, bottom = 0.5, top = 1.5, x = dict_of_investments['stocks'][what_investment], type="stocks") # replaces defined values in sellInvestment with those appropriate for selling stocks
+		self.sellInvestment(what_investment, int(number), bottom = 0.5, top = 1.5, x = dict_of_investments['stocks'][what_investment], type="stocks") # replaces defined values in sellInvestment with those appropriate for selling stocks. int() forces whole-unit sales
 	
 	def sellMutualFund(self, what_investment, number):
 		self.sellInvestment(what_investment, number, type = "mutual funds")
@@ -104,7 +104,7 @@ class Bond(Investments): # introducing bonds isn't hard w/ inheritance, just lik
 portfolio = Portfolio()
 # portfolio.addCash(300.50)
 # s = Stock(20, "HFH")
-# portfolio.buyStock(5, s)
+# portfolio.buyStock(5.4, s)
 # mf1 = MutualFund("BRT")
 # mf2 = MutualFund("GHT")
 # portfolio.buyMutualFund(10.3, mf1)
