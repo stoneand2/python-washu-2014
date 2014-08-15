@@ -6,11 +6,11 @@ class Node:
 		return str(self.value)
 
 class LinkedList:
-	def __init__(self, value):						# this is O(constant?)
+	def __init__(self, value):						# this is O(constant)
 		self.head = Node(value)						# self.head will remain the initialized value
 		self.how_long = 1							# length counter
 	
-	def addNode(self, new_node):					# this is O(n?)
+	def addNode(self, new_node):					# this is O(n)
 		new_node = Node(new_node)					# preserves the new node's next value as None
 		holder = self.head							# the holder starts out at the initialized head value
 		while holder.next is not None:				# while the pointer of the holder doesn't point to None
@@ -55,7 +55,7 @@ class LinkedList:
  			holder = holder.next
  		return what_to_print
 	
-	def removeNode(self, node_to_remove):					# this is O(constant?)
+	def removeNode(self, node_to_remove):					# this is O(n) at worst
 		holder = self.head
 		if (str(node_to_remove)==str(holder)) and holder.next is None: # doesn't allow making the list empty
 			return "Can't remove this node--list would be empty."
@@ -72,7 +72,7 @@ class LinkedList:
 		holder.next = holder.next.next								# jumps over removed value
 		self.how_long -= 1
 	
-	def removeNodesByValue(self, value):							# this is O(a lot0)
+	def removeNodesByValue(self, value):							# this is much worse than O(n). O(n**2?). not sure.
 		holder = self.head
 		if (str(value)==str(holder)) and (holder.next is None):		# doesn't allow making the list empty
 			return "Can't remove this node--list would be empty."		
