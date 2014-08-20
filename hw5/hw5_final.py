@@ -1,5 +1,7 @@
 # The blog I used does have a comments section, but no comments have been made (Matt said this was okay)
 # The blog has no specified authors (Matt said this was okay)
+# BONUS: The way this program reads in the blog posts puts them in the csv file into reverse chronological order already
+# If they csv needs to be in chronological order, code that will do this is located in the file: reverse_list.py
 
 from bs4 import BeautifulSoup
 import csv 
